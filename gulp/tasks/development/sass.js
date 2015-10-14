@@ -1,6 +1,6 @@
 var gulp         = require('gulp');
 var plumber      = require('gulp-plumber');
-var browsersync  = require('browser-sync');
+var browsersync  = require('browser-sync').create();
 var sass         = require('gulp-ruby-sass');
 var gulpFilter   = require('gulp-filter');
 var autoprefixer = require('gulp-autoprefixer');
@@ -26,7 +26,35 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(filter) // Don’t write sourcemaps of sourcemaps
-    .pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: 'app/_assets/scss'}))
+    .pipe(sourcemaps.write('.', sourcemapsConfig))
     .pipe(filter.restore) // Restore original files
     .pipe(gulp.dest(config.sass.dest));
 });
+
+// -----------------------------------------------------------------------------
+// SassDoc
+// -----------------------------------------------------------------------------
+
+
+// var sassdoc = require('sassdoc');
+
+
+// -----------------------------------------------------------------------------
+// Configuration
+// -----------------------------------------------------------------------------
+
+//var input = config.sass.src;
+//var sassdocOptions = { dest: '../proyectogulp.com/app/public/sassdoc' };
+
+
+
+// -----------------------------------------------------------------------------
+// Sass documentation generation
+// -----------------------------------------------------------------------------
+
+//gulp.task('sassdoc', function () {
+//  return gulp
+//    .src(input)
+//    .pipe(sassdoc(sassdocOptions))
+//    .resume();
+//});

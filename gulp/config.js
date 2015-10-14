@@ -7,6 +7,17 @@ var developmentAssets = 'build/assets';
 var productionAssets  = 'build/production/assets';
 
 module.exports = {
+  init: {
+	  src: [ 
+		  development + '/**/*.{html,php}', 
+		  development + '/.htaccess'
+	  ],
+	  dest: rutapublic + '/',
+	  replace: {
+		  x: 'name',
+		  y: 'name'
+		} 
+	},
   browsersync: {
     development: {
       server: {
@@ -43,14 +54,18 @@ module.exports = {
     }
   },
   sass: {
-    src:  srcAssets + '/scss/**/*.{sass,scss}',
-    dest: developmentAssets + '/css',
-    options: {
-      noCache: true,
-      compass: false,
-      bundleExec: true,
-      sourcemap: true,
-    }
+    src:  srcAssets + '/scss/*.{sass,scss}',
+	dest: productionAssets + '/css',
+	options: [{
+	  noCache: true,
+	  compass: false,
+	  bundleExec: true,
+	  sourcemap: true
+	}],
+	sourcemaps: [{
+	  includeContent: false, 
+	  sourceRoot: srcAssets + '/scss'
+	}]
   },
   autoprefixer: {
     browsers: [
@@ -174,17 +189,49 @@ module.exports = {
   },
   optimize: {
     css: {
-      src:  developmentAssets + '/css/*.css',
-      dest: productionAssets + '/css/',
-      options: {
-        keepSpecialComments: 0
-      }
-    },
+	  src:  [
+	   	developmentAssets + '/css/**/*.css', 
+	  	'!' + developmentAssets + '/css/**/*.min.css'
+	  ],
+	  dest: productionAssets + '/',
+	  options: {
+	  	html: [developmentAssets + '/html/*.html'],
+	  	ignore: [
+	  		// Bootstrap selectors added via JS
+	  		".fade",
+	  		".fade.in",
+	  		".collapse",
+	  		/(#|\.)btn(\-[a-zA-Z]+)?/,
+	  		".collapsing",
+	  		".collapse.in",
+	  		".collapsing",
+	  		/(#|\.)alert(\-[a-zA-Z]+)?/,
+	  		".alert-danger",
+	  		".open",
+	  		/\.right/,
+	  		".modal-open",
+	  		/\.modal-open/,
+	  		"/open+/",
+	  		".modal-backdrop",
+	  		/\w\.in/,
+	  		/\.open/,
+	  		/(#|\.)navbar(\-[a-zA-Z]+)?/,
+	  		/(#|\.)dropdown(\-[a-zA-Z]+)?/,
+	  		/(#|\.)(open)/,
+	  		// currently only in a IE conditional, so uncss doesn't see it
+	  		".close",
+	  		".alert-dismissible"
+	  	]
+	  }
+	},
     js: {
-      src:  developmentAssets + '/js/*.js',
-      dest: productionAssets + '/js/',
-      options: {}
-    },
+	  src: [
+	  	developmentAssets + '/js/vendor/bootstrap.js', 
+	  	developmentAssets + '/js/*.js'
+	  ],
+	  dest: productionAssets + '/js/min/',
+	  options: {}
+	},
     images: {
       src:  developmentAssets + '/images/**/*.{jpg,jpeg,png,gif}',
       dest: productionAssets + '/images/',
