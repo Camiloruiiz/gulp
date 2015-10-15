@@ -16,9 +16,11 @@ gulp.task('optimize:html', function() {
     .pipe(gulp.dest(config.dest))
     .pipe(to)
     .pipe(notify({
+		title: 'Html',
+        subtitle: 'Optimized',
 		onLast: true,
 		message: function () {
-		    	return 'Total size from ' + from.prettySize + ' to ' + to.prettySize ;
+		    return 'From ' + from.prettySize + ' to ' + to.prettySize ;
 		}
 	}));
 });

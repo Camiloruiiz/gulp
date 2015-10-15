@@ -16,13 +16,15 @@ gulp.task('optimize:js', function() {
     .pipe(from)
     //.pipe(concat('allcumains.js'))
 	.pipe(uglify(config.options))
-	//.pipe(rename({ suffix: '.min' }))
+	.pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(config.dest))
     .pipe(to)
 	.pipe(notify({
+		title: 'Scripts',
+        subtitle: 'Optimized',
 		onLast: true,
 		message: function () {
-		    	return 'Total size from ' + from.prettySize + ' to ' + to.prettySize ;
+		    return 'Size from ' + from.prettySize + ' to ' + to.prettySize ;
 		}
 	}));
 });
