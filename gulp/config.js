@@ -55,17 +55,17 @@ module.exports = {
   },
   sass: {
     src:  srcAssets + '/scss/*.{sass,scss}',
-	dest: productionAssets + '/css',
-	options: [{
+	dest: developmentAssets + '/css',
+	options: {
 	  noCache: true,
 	  compass: false,
 	  bundleExec: true,
 	  sourcemap: true
-	}],
-	sourcemaps: [{
+	},
+	sourcemaps: {
 	  includeContent: false, 
-	  sourceRoot: srcAssets + '/scss'
-	}]
+	  sourceRoot: '/_assets/scss/'
+	}
   },
   autoprefixer: {
     browsers: [
@@ -193,9 +193,9 @@ module.exports = {
 	   	developmentAssets + '/css/**/*.css', 
 	  	'!' + developmentAssets + '/css/**/*.min.css'
 	  ],
-	  dest: productionAssets + '/',
+	  dest: productionAssets + '/css/',
 	  options: {
-	  	html: [developmentAssets + '/html/*.html'],
+	  	html: [src  + '/*.html'],
 	  	ignore: [
 	  		// Bootstrap selectors added via JS
 	  		".fade",
@@ -229,7 +229,7 @@ module.exports = {
 	  	developmentAssets + '/js/vendor/bootstrap.js', 
 	  	developmentAssets + '/js/*.js'
 	  ],
-	  dest: productionAssets + '/js/min/',
+	  dest: productionAssets + '/js/',
 	  options: {}
 	},
     images: {

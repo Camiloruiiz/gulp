@@ -13,6 +13,7 @@ var config       = require('../../config');
  */
 gulp.task('sass', function() {
   var sassConfig = config.sass.options;
+  var sourcemapsConfig = config.sass.sourcemaps;
 
   sassConfig.onError = browsersync.notify;
 

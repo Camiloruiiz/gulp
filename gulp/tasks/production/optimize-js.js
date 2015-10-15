@@ -10,11 +10,19 @@ var config      = require('../../config').optimize.js;
  * Copy and minimize JS files
  */
 gulp.task('optimize:js', function() {
+  var from = size();
+  var to = size();
   return gulp.src(config.src)
-    .pipe(concat('allcumains.js'))
+    .pipe(from)
+    //.pipe(concat('allcumains.js'))
 	.pipe(uglify(config.options))
-	.pipe(rename({ suffix: '.min' }))
+	//.pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(config.dest))
-    .pipe(size())
-    .pipe(notify("Scripts optimized!"));
+    .pipe(to)
+	.pipe(notify({
+		onLast: true,
+		message: function () {
+		    	return 'Total size from ' + from.prettySize + ' to ' + to.prettySize ;
+		}
+	}));
 });
