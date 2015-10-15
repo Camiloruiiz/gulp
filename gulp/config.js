@@ -12,7 +12,7 @@ module.exports = {
 		  development + '/**/*.{html,php}', 
 		  development + '/.htaccess'
 	  ],
-	  dest: rutapublic + '/',
+	  dest: production + '/',
 	  replace: {
 		  x: 'name',
 		  y: 'name'
