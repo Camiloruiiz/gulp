@@ -23,7 +23,7 @@ gulp.task('optimize:css', function() {
 	//.pipe(uncss(uncssConfig))
 	.pipe(prefix(config.autoprefixer))
     .pipe(minifycss(config.options))
-    //.pipe(rename({ suffix: '.min' }))
+    .pipe(rename({ suffix: '.min' }))
 	.pipe(gulp.dest(config.dest))
 	.pipe(to)
 	.pipe(notify({
@@ -31,7 +31,7 @@ gulp.task('optimize:css', function() {
         subtitle: 'Optimized',
 		onLast: true,
 		message: function () {
-		    return 'From ' + from.prettySize + ' to ' + to.prettySize ;
+		    return  from.prettySize + ' → ' + to.prettySize ;
 		}
 	}));
 });

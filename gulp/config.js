@@ -13,7 +13,7 @@ module.exports = {
 		  development + '/.htaccess'
 	  ],
 	  dest: production + '/',
-	  replace: {
+	  remplace: {
 		  x: 'name',
 		  y: 'name'
 		} 
@@ -246,7 +246,17 @@ module.exports = {
       dest: production,
       options: {
         collapseWhitespace: true
-      }
+      },
+      remplace: {
+	      js:{
+		    x: '.js',
+		    y: '.min.js'   
+	      },
+	      css:{
+		  	x: '.css',
+		    y: '.min.css'    
+	      },
+		}
     }
   },
   revision: {

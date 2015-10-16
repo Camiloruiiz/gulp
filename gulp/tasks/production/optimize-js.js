@@ -24,7 +24,7 @@ gulp.task('optimize:js', function() {
         subtitle: 'Optimized',
 		onLast: true,
 		message: function () {
-		    return 'Size from ' + from.prettySize + ' to ' + to.prettySize ;
+		    return  from.prettySize + ' → ' + to.prettySize ;
 		}
 	}));
 });

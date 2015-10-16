@@ -21,7 +21,7 @@ gulp.task('optimize:images', function() {
         subtitle: 'Optimized',
 		onLast: true,
 		message: function () {
-		    	return 'From ' + from.prettySize + ' to ' + to.prettySize ;
+		    	return from.prettySize + ' → ' + to.prettySize ;
 		}
 	}));
 });
