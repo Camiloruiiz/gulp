@@ -26,12 +26,12 @@ quiet: false
 #manifest: tmp/fontcustom
 
 input:
-  vectors: vectors # required
+  vectors: sites/oscaruiz.xyz/vectors # required
 #  templates: app/assets/fonts/fontcustom/templates
 
 output:
-  fonts: app/_assets/fonts # required
-  css: app/_assets/scss
+  fonts: sites/oscaruiz.xyz/app/_assets/fonts # required
+  css: sites/oscaruiz.xyz/app/_assets/scss
   preview: docs
 #  my-custom-template.yml: config
 
