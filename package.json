@@ -4,8 +4,8 @@
   "description": "The build process of my website with Gulp.js",
   "private": true,
   "browser": {
-    "modernizr": "./app/_bower_components/modernizr/modernizr.js",
-    "jquery": "./app/_bower_components/jquery/dist/jquery.js"
+    "modernizr": "./sites/oscaruiz.xyz/app/_bower_components/modernizr/modernizr.js",
+    "jquery": "./sites/oscaruiz.xyz/_bower_components/jquery/dist/jquery.js"
   },
   "browserify-shim": {
     "modernizr": "Modernizr",
