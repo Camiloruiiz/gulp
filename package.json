@@ -5,7 +5,7 @@
   "private": true,
   "browser": {
     "modernizr": "./sites/oscaruiz.xyz/app/_bower_components/modernizr/modernizr.js",
-    "jquery": "./sites/oscaruiz.xyz/_bower_components/jquery/dist/jquery.js"
+    "jquery": "./sites/oscaruiz.xyz/app/_bower_components/jquery/dist/jquery.js"
   },
   "browserify-shim": {
     "modernizr": "Modernizr",
