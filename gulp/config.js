@@ -8,12 +8,12 @@ var src 				= sites + '/app';
 
 var build				= sites + '/build';
 
-var development         = sites + '/build/development';
-var production          = sites +  '/build/production';
+var development         = build + '/development';
+var production          = build +  '/production';
 
-var srcAssets           = sites + '/_assets';
-var developmentAssets   = development +  '/assets';
-var productionAssets    = production + '/production/assets';
+var srcAssets           = src + '/_assets';
+var developmentAssets   = build + '/assets';
+var productionAssets    = build + '/production/assets';
 
 
 var developmentBower	= development + '/_bower_components';
