@@ -1,10 +1,22 @@
-var src               = 'app';
-var build             = 'build';
-var development       = 'build/development';
-var production        = 'build/production';
-var srcAssets         = 'app/_assets';
-var developmentAssets = 'build/assets';
-var productionAssets  = 'build/production/assets';
+var remplaceX 			= 'dev.com';
+var remplaceY 			= 'ilpingenieria.com';
+
+var name 				= 'dev.com';
+var sites				= 'sites/' + name ;
+
+var src 				= sites + '/app';
+
+var build				= sites + '/build';
+
+var development         = sites + 'build/development';
+var production          = sites +  'build/production';
+var srcAssets           = 'app/_assets';
+var developmentAssets   = development +  'build/assets';
+var productionAssets    = production + 'build/production/assets';
+
+
+var developmentBower	= development + '/_bower_components';
+var productionBower	    = production + '/_bower_components';
 
 module.exports = {
   init: {
