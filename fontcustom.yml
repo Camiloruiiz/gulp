@@ -32,7 +32,7 @@ input:
 output:
   fonts: sites/oscaruiz.xyz/app/_assets/fonts # required
   css: sites/oscaruiz.xyz/app/_assets/scss
-  preview: docs
+  preview: sites/oscaruiz.xyz/docs
 #  my-custom-template.yml: config
 
 
