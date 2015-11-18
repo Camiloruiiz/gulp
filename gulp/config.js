@@ -11,9 +11,9 @@ var build				= sites + '/build';
 var development         = sites + '/build/development';
 var production          = sites +  '/build/production';
 
-var srcAssets           = sites + '/app/_assets';
-var developmentAssets   = development +  '/build/assets';
-var productionAssets    = production + '/build/production/assets';
+var srcAssets           = sites + '/_assets';
+var developmentAssets   = development +  '/assets';
+var productionAssets    = production + '/production/assets';
 
 
 var developmentBower	= development + '/_bower_components';
