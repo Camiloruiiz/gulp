@@ -8,8 +8,8 @@ var src 				= sites + '/app';
 
 var build				= sites + '/build';
 
-var development         = sites + 'build/development';
-var production          = sites +  'build/production';
+var development         = sites + '/build/development';
+var production          = sites +  '/build/production';
 
 var srcAssets           = sites + '/app/_assets';
 var developmentAssets   = development +  '/build/assets';
